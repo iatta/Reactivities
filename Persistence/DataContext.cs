@@ -9,7 +9,9 @@ namespace Persistence
         public DataContext(DbContextOptions opt) : base(opt){
         }
         public DbSet<Value> Values { get; set; }
+        public DbSet<Activity> Activities { get; set; }
 
+        //seeding Data
         protected override void OnModelCreating(ModelBuilder builder){
             builder.Entity<Value>().HasData(
                 new Value{Id = 1 , Name = "v1"},
